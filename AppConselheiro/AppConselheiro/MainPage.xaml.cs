@@ -31,8 +31,8 @@ namespace AppConselheiro
                 btn_novoConselho.IsEnabled = false;
 
                 Conselho novoConselho = await DataService.getConselho();
+                lbl_conselho.Text = novoConselho.Texto;
                 await App.Database.InsertConselho(novoConselho);
-                this.BindingContext = novoConselho;
 
                 btn_novoConselho.Text = "Novo Conselho";
                 btn_novoConselho.IsEnabled = true;
