@@ -28,5 +28,10 @@ namespace AppConselheiro.Helper
 
             return _db.Table<Conselho>().OrderByDescending(i => i.Id).FirstOrDefaultAsync();
         }
+
+        public Task<Conselho> GetConselhoById(int id)
+        {
+            return _db.Table<Conselho>().FirstOrDefaultAsync(i => i.Id == id);
+        }
     }
 }
